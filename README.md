@@ -1,2 +1,47 @@
-# SeniorDesign_Lab2
-Repository containing team CASH's solution to Lab 2
+# Team CASH: Laboratory #2 ECE:4880 - Senior Design
+Contributors: Cole Brooks, Hongyu Zeng, Ann Thomas, Steve Wasiswa
+
+### Design Documentation
+#### Hardware
+#### Software (maybe this section should be broken down into components? Not sure)
+
+### Design Process and Experimentation:
+#### Hardware
+#### Software (maybe this section should be broken down into components? Not sure)
+
+### Requirements
+format = '| num | Desc |'
+
+|Req # | Description | 
+| ---- | ----------- | 
+| 01 | Receiver must work at least as well as prototype receiver. Sepecifically under low-light conditions. It should not have a measurably worse rate of false positives or false negatives compared to the prototype |
+| 02 | Receiver should work reliably in the presence of a 100 W incandescent light bulb and/or direct sunlight. A slight performance degradation compared to low light is acceptable |
+| 03 | Each time the transmitted beam is interrupted, an SMS alert shall be sent to a cell phone. |
+| 04 | Message format shall be as follows: "Critical safety event at HH:MM XX", where HH is the hour in range 00 to 12, MM is the minute in range 0 to 59, and XX is the time of day AM or PM. The phone number for receiving alerts should be hard coded into the system. |
+| 05 | Receiver performs all functionality with existing prototype |
+| 06 | Receiver shall not have an 'abnormally large size or weight, or other physical characteristics that prevent it from being a reasonable replacement for the prototype receiver' |
+
+### Test Report
+(Test syntax: "| Test Name | Requirement | Expected Result | Actual Result | Pass/Fail | Date | Corrective Action (write an issue for this) |" )
+#### Hardware
+| Test Name | Process | Expected Result | Actual Result | Pass/Fail | Date | Issue Written |
+| --------- | ------- | --------------- | --------------| --------- | ---- | ------------- |
+| Hardware Reliably Connects to Internet | Load Arduino with 'test', view test report. Inspect result for 'Hardware: connection reliability  | > 90 | Actual Result | Pass/Fail | Date | Corrective Action (write an issue for this) |
+
+
+#### Software (maybe this section should be broken down into components? Not sure)
+| Test Name | Process | Expected Result | Actual Result | Pass/Fail | Date | Issue Written |
+| --------- | ------- | --------------- | --------------| --------- | ---- | ------------- |
+| Test Name | Process | Expected Result | Actual Result | Pass/Fail | Date | Corrective Action (write an issue for this) |
+
+#### System
+| Test Name | Requirement | Expected Result | Actual Result | Pass/Fail | Date | Issue Written |
+| --------- | ----------- | --------------- | --------------| --------- | ---- | ------------- |
+| Overall Usability |  | Expected Result | Actual Result | Pass/Fail | Date | Corrective Action (write an issue for this) |
+
+### Project Retrospective
+#### What Went Well
+#### What could have gone better
+#### Summary
+
+### Appendix & References
