@@ -3,6 +3,10 @@ Contributors: Cole Brooks, Hongyu Zeng, Ann Thomas, Steve Wasiswa
 
 ### Design Documentation
 #### Hardware
+10/7/21: 
+Tested two different sensor modules that seemed viable. The 5V laser receiver sensor from Dallas Sensors was the first module, it performed quite well aside from when in contact with very bright light (a flashlight for example could trigger this sensor). Unfortunately that was not going to work for our purposes. Instead we opted to use the HW-201 Module from HiLetgo off of Amazon. This sensor is originally intended to be for obstacle avoidance, but it works on the concept of sensing IR light. This will work quite well for our application because it already has a physical filter to keep out all visible light.
+
+This module will require some modification, though. First of all, we have to do something about the IR transmitter on board. We'll likely just need to cut that off, but I don't want to commit to that until more information is acquired. 
 #### Software (maybe this section should be broken down into components? Not sure)
 
 ### Design Process and Experimentation:
