@@ -31,6 +31,9 @@ format = '| num | Desc |'
 | Test Name | Process | Expected Result | Actual Result | Pass/Fail | Date | Issue Written |
 | --------- | ------- | --------------- | --------------| --------- | ---- | ------------- |
 | Hardware Reliably Connects to Internet | Load Arduino with 'test', view test report. Inspect result for 'Hardware: connection reliability  | > 90 | Actual Result | Pass/Fail | Date | Corrective Action (write an issue for this) |
+| Sensor component works out of box | Connect Vin pin from the light sensor to 3.3 or 5 volts. Connect ground pin from the light sensor to ground. Connect Out pin from sensor to a digital input pin on the arduino. View that when you put an object (your hand) near the black receiver diode that the red LED on the sensor's circuit board turns on  | Light should turn on when object is present, and turn off when it moves away. | Actual Result | Pass/Fail | Date | Corrective Action (write an issue for this) |
+| Case Fit Test | All components should fit into the case neatly.  | There should be no visible wires, and the case should close easily | Actual Result | Pass/Fail | Date | Corrective Action (write an issue for this) |
+| Case Drop Test | With all components stored in the case, the system should not fail if dropped from a reasonable bench height. Drop the system from desk and view results  | System should be unaffected by drop | Actual Result | Pass/Fail | Date | Corrective Action (write an issue for this) |
 
 
 #### Software (maybe this section should be broken down into components? Not sure)
