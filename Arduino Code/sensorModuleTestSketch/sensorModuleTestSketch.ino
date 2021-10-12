@@ -31,7 +31,7 @@
 
     26.6775e+000   -12.2802e-015     7.2364e+000    -2.1250e-015     1.1825e+000  -167.8542e-018    88.1623e-003
 */
-
+int sensorPin = A7;
 int n = 23;
 float x[23], y[23], yn;     // Space to hold previous samples and outputs
 float a[] = {1, -2.57591457011099e-15, 8.58778445148720, -1.92768199348703e-1, 33.7388841955045, -6.40107369713551e-14, 80.0067850106190,
@@ -57,15 +57,14 @@ void loop() {
   count = 0;
   while (1) {
     t1 = micros();
-
+    
     // Apply a digital filter.
-
     for (i = 1; i < n; i++) {     // Shift samples
       x[n - i] = x[(n - 1) - i];
       y[n - i] = y[(n - 1) - i];
     }
-    //val = analogRead(analogPin);
-    x[0] = val * (5.0 / 1023.0) - 2.5; // New input to filter
+    val = 1023 - analogRead(sensorPin);
+    x[0] = val * (3.3 / 1023.0) - 1.65; // New input to filter
     yn = 0;
     for (i = 0; i < n; i++)
       yn = yn + b[i] * x[i];
@@ -85,10 +84,10 @@ void loop() {
     if (count > 150) count = 150;
     if (count <= 0) count = 0;
 
-    if (count > 135)
-      //digitalWrite(12, LOW);
-    else
-      //digitalWrite(12, HIGH);
+    if (count > 135) // normal
+      ;
+    else // alerts
+      ;
 
     // The filter was designed assuming a 2000 Hz sampling rate. This corresponds
     // to a sample every 500 us.
