@@ -1,21 +1,34 @@
-/* 
- fc = 400
- fs = 2000
- [b,a] = butter(3,w,'high)
+/*
+  fc = 400
+  fs = 2000
+  [b,a] = butter(3,w,'high)
+*/
+
+/*
+   fc = 450
+   [b,a] = butter(5 ,w,'high')
+   b = 0.0768   -0.3840    0.7679   -0.7679    0.3840   -0.0768
+   a = 1.0000   -0.4923    0.7183   -0.1733    0.0688   -0.0047
 */
 int sensorPin = A7;
-int n = 4;
-float x[4], y[4], ynew;     // Space to hold previous samples and outputs
-//float a[] = {1.0000,   -1.5906,    2.0838,   -1.5326,    0.8694,   -0.3192,   0.0821,   -0.0122,    0.0009};
-//float b[] = {0.0293,   -0.2341,    0.8193,   -1.6386,    2.0483,   -1.6386, 0.8193,   -0.2341,    0.0293};
-float a[] = {1.0000,   -0.5772,    0.4218,   -0.0563};
-float b[] = {0.2569,   -0.7707,    0.7707,   -0.2569};
+//int n = 4;
+//float x[4], y[4], ynew;     // Space to hold previous samples and outputs
+//float a[] = {1.0000,   -0.5772,    0.4218,   -0.0563};
+//float b[] = {0.2569,   -0.7707,    0.7707,   -0.2569};
+int n = 6;
+float x[6], y[6], ynew;
+float a[] = {1.0000,   -0.4923,    0.7183,   -0.1733,    0.0688,   -0.0047};
+float b[] = {0.0768,   -0.3840,    0.7679,   -0.7679,    0.3840,   -0.0768};
+
 void setup() {
   pinMode(4, OUTPUT);
   pinMode(sensorPin, INPUT);
   digitalWrite(4, HIGH);
   analogReference(AR_DEFAULT);
   Serial.begin(115200);
+  while (!Serial) {
+    ;
+  }
   ADC->CTRLB.reg = ADC_CTRLB_PRESCALER_DIV64 |    // Divide Clock by 512.
                    ADC_CTRLB_RESSEL_10BIT;         // 10 bits resolution as default
   for (int i = 0; i < n; i++)   //  Clear x and y arrays
@@ -46,31 +59,30 @@ void loop() {
     y[0] = ynew;                   // New output from filter
 
     s = abs(ynew);               // Use filtered signal
-    Serial.println(ynew);
+    // Serial.println(ynew);
 
-    //Serial.print("delay: ");
-    //Serial.println(micros() - t1);
-    //    Serial.println(val);
-    //    delay(1000);
-    //    // Now we can use the signal for its intended purpose. Below we check and turn an
-    //    // LED on if the beam has been interrupted for.
-    //
-    if (s > 1.2)                 // Threshold voltage
+    if (s > 0.5)                 // Threshold voltage
       count++;
     else
       count--;
     if (count > 150) count = 150;
     if (count <= 0) count = 0;
     //
-    if (count > 135) // normal
+    if (count > 130) {
+      // normal
       digitalWrite(4, HIGH);
-    else // alerts
+      Serial.println("1");
+    } else {
+      // alerts
       digitalWrite(4, LOW);
+      Serial.println("0");
+    }
+
     //
     //    // The filter was designed assuming a 2000 Hz sampling rate. This corresponds
     //    // to a sample every 500 us.
     //
-    while ((micros() - t1) < 489) // 1035 Was determined via experimentation
+    while ((micros() - t1) < 489)
       ;
     //Serial.println(micros() - t1);
     //delay(100);

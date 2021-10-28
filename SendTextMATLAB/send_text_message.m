@@ -15,7 +15,7 @@ function send_text_message(number,carrier,subject,message)
 %         'This is a text message without subject')
 %
 %   See also SENDMAIL.
-% Ke Feng (2021). Send Text Message to Cell Phone (https://www.mathworks.com/matlabcentral/fileexchange/16649-send-text-message-to-cell-phone), MATLAB Central File Exchange. Retrieved October 27, 2021.
+%
 % You must modify the first two lines of the code (code inside the double 
 % lines) before using.
 % Ke Feng, Sept. 2007

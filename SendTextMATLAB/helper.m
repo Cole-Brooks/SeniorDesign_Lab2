@@ -1,5 +1,5 @@
 hasBeenAlerted = false;
-s = serialport('COM8', 115200);
+s = serialport('COM6', 115200);
 while true
    res = str2double(readline(s)); 
    if res == 1
