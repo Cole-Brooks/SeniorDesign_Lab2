@@ -1,3 +1,9 @@
+% Ke Feng (2021). Send Text Message to Cell Phone 
+% (https://www.mathworks.com/matlabcentral/fileexchange/16649-send-text-message-to-cell-phone), 
+% MATLAB Central File Exchange. Retrieved October 27, 2021.
+% this citation is added on 10/31/2021, apologize for not including it in time. 
+% Checked by Hongyu on Oct 29 that the version was correct.
+% Modified by Hongyu Zeng
 function send_text_message(number,carrier,subject,message)
 % SEND_TEXT_MESSAGE send text message to cell phone or other mobile device.
 %    SEND_TEXT_MESSAGE(NUMBER,CARRIER,SUBJECT,MESSAGE) sends a text message
