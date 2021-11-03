@@ -1,4 +1,7 @@
 /*
+ * modified from Code provided by Nick Gorman, from Profesor Kruger
+ */
+/*
   fc = 400
   fs = 2000
   [b,a] = butter(3,w,'high)
